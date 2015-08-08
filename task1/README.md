@@ -92,3 +92,5 @@ B77W-outside          | leh-a.livejournal.com/73661.html
 AN2                   | avia.pro/blog/antonov-2-foto-video-shema-salona-harakteristiki-otzyvy
 A333                  | aviado.ru/airlines/jets/airbus-a330-300/
 A321                  | aviado.ru/airlines/jets/airbus-a321/
+флаги стран           | ru.wikipedia.org
+иконки погоды         | simekonelove.deviantart.com/art/Vector-Stylish-Weather-Icons-258808359
