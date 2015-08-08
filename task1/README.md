@@ -39,7 +39,7 @@
 Оказывается, бывают рейсы с [промежуточными остановками](http://aviaforum.ru/threads/rejs-s-promezhutochnoj-posadkoj.34430/), а иногда вообще [круговые](http://forum.tr.ru/read.php?18,852199). Ещё [бывает](http://www.oneaero.ru/FlightInfo/SQ-062) одновременно персадка и код-шеринг, причём код-шеринг только на часть рейса. Впрочем, вроде как, цикла из код-шар-зависимостей быть не может.
 
 ###Тип воздушного судна
-Воздушные суда, помимо полного названия, имеют коды [по ICAO](http://aerolan.dn.ua/icao-kody-samoletov) и [по IATA](http://aerolan.dn.ua/iata-kody-samoletov). Для сокращённого названия лучше использовать их.
+Воздушные суда, помимо полного названия, имеют коды [по ICAO](http://aerolan.dn.ua/icao-kody-samoletov) и [по IATA](http://aerolan.dn.ua/iata-kody-samoletov). Для сокращённого названия лучше использовать их. Кстати, у аэрофлота [неплохое описание](http://www.aeroflot.ru/cms/flight/plane_park) парка самолётов.
 
 ###Аэропорты
 Аэропорты тоже имеют общепринятые [коды](http://airportsbase.ru/). Помимо названия аэропорта, нужно указывать город и страну, в которой он находится, а также терминал, если их несколько. На широких экранах можно также показывать погоду и время в месте назначения.
@@ -80,3 +80,15 @@
 Самолёты     | 5
 Аэропорты    | 20
 Города       | 15
+
+Культурно будет указать источники картинок.
+
+Картинка              | Откуда
+---------------------------------
+логотипы авиакомпаний | ru.wikipedia.org
+B738                  | dron-nsk.livejournal.com/45903.html
+B77W-inside           | samolets.com/sxema-salona-boeing-777-300er-aeroflot/
+B77W-outside          | leh-a.livejournal.com/73661.html
+AN2                   | avia.pro/blog/antonov-2-foto-video-shema-salona-harakteristiki-otzyvy
+A333                  | aviado.ru/airlines/jets/airbus-a330-300/
+A321                  | aviado.ru/airlines/jets/airbus-a321/
