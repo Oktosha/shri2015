@@ -94,3 +94,6 @@ A333                  | aviado.ru/airlines/jets/airbus-a330-300/
 A321                  | aviado.ru/airlines/jets/airbus-a321/
 флаги стран           | ru.wikipedia.org
 иконки погоды         | simekonelove.deviantart.com/art/Vector-Stylish-Weather-Icons-258808359
+иконки статуса        | visuallyinteresting.co.uk/2011/10/24/airport-wayfinding-icons-updated-explained/
+
+Будем считать, что в городе Суть местное время 13:10.
