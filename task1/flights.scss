@@ -1,0 +1,41 @@
+$accent-background-color: #283E4B;
+$main-background-color: white;
+$light-color: white;
+$footer-height: 80px;
+$content-width: 94%;
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0 0 ($footer-height + 25px);
+    background: url("sad-background.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.content {
+    width: $content-width;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header, footer {
+    @extend .content;
+    background-color: $accent-background-color;
+    color: $light-color;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: (100% - $content-width) / 2;
+    height: $footer-height;
+}
+
+main {
+    @extend .content;
+    background-color: $main-background-color;
+}
