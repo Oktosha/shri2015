@@ -46,54 +46,74 @@ function getData(url, callback) {
  * Ваши изменения ниже
  */
 
-/*global console*/
+/*global console, prompt*/
 
-var requests = ['/countries', '/cities', '/populations'];
-var responses = {};
-var i;
-
-function callbackFactory(request) {
+/**
+* @param {string} destination
+*/
+function countPopulation() {
     'use strict';
-    return function (error, result) {
-        responses[request] = result;
-        var l = [], K, c = [], cc = [], p = 0, i, j;
-        for (K in responses) {
-            if (responses.hasOwnProperty(K)) {
-                l.push(K);
-            }
-        }
-
-        if (l.length === 3) {
-            
-            for (i = 0; i < responses['/countries'].length; i += 1) {
-                if (responses['/countries'][i].continent === 'Africa') {
-                    c.push(responses['/countries'][i].name);
+    var requests = ['/countries', '/cities', '/populations'], responses = {}, i, destination;
+    destination = prompt("Введите название города, государства или континента, численность населения которого хотите узнать", "Africa");
+    
+    function callbackFactory(request) {
+        return function (error, result) {
+            responses[request] = result;
+            var l = [], K, c = [], cc = [], p = 0, isData = false, i, j, textNode, node;
+            for (K in responses) {
+                if (responses.hasOwnProperty(K)) {
+                    l.push(K);
                 }
             }
 
-            for (i = 0; i < responses['/cities'].length; i += 1) {
-                for (j = 0; j < c.length; j += 1) {
-                    if (responses['/cities'][i].country === c[j]) {
-                        cc.push(responses['/cities'][i].name);
+            if (l.length === 3) {
+
+                for (i = 0; i < responses['/countries'].length; i += 1) {
+                    if (responses['/countries'][i].continent === destination) {
+                        c.push(responses['/countries'][i].name);
                     }
                 }
-            }
+                
+                if (c.length === 0) {
+                    c.push(destination);
+                }
 
-            for (i = 0; i < responses['/populations'].length; i += 1) {
-                for (j = 0; j < cc.length; j += 1) {
-                    if (responses['/populations'][i].name === cc[j]) {
-                        p += responses['/populations'][i].count;
+                for (i = 0; i < responses['/cities'].length; i += 1) {
+                    for (j = 0; j < c.length; j += 1) {
+                        if (responses['/cities'][i].country === c[j]) {
+                            cc.push(responses['/cities'][i].name);
+                        }
                     }
                 }
+                
+                if (cc.length === 0) {
+                    cc.push(destination);
+                }
+
+                for (i = 0; i < responses['/populations'].length; i += 1) {
+                    for (j = 0; j < cc.length; j += 1) {
+                        if (responses['/populations'][i].name === cc[j]) {
+                            p += responses['/populations'][i].count;
+                            isData = true;
+                        }
+                    }
+                }
+                
+                node = document.createElement("p");
+                if (isData) {
+                    textNode = document.createTextNode('Total population in '
+                                                       + destination + ': ' + p);
+                } else {
+                    textNode = document.createTextNode('No data on population in '
+                                                       + destination + '.');
+                }
+                node.appendChild(textNode);
+                document.getElementById("answers").appendChild(node);
             }
-
-            console.log('Total population in African cities: ' + p);
-        }
-    };
-}
-
-for (i = 0; i < 3; i += 1) {
-    var request = requests[i];
-    var callback = callbackFactory(request);
-    getData(request, callback);
+        };
+    }
+    
+    for (i = 0; i < 3; i += 1) {
+        getData(requests[i], callbackFactory(requests[i]));
+    }
 }
