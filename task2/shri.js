@@ -4,6 +4,7 @@
  * @param {function} callback
  */
 function getData(url, callback) {
+    'use strict';
     var RESPONSES = {
         '/countries': [
             {name: 'Cameroon', continent: 'Africa'},
@@ -19,7 +20,7 @@ function getData(url, callback) {
             {name: 'Quetzaltenango', country: 'Guatemala'},
             {name: 'Osaka', country: 'Japan'},
             {name: 'Subotica', country: 'Yugoslavia'},
-            {name: 'Zanzibar', country: 'Tanzania'},
+            {name: 'Zanzibar', country: 'Tanzania'}
         ],
         '/populations': [
             {count: 138000, name: 'Bamenda'},
@@ -44,35 +45,42 @@ function getData(url, callback) {
 /**
  * Ваши изменения ниже
  */
+
+/*global console*/
+
 var requests = ['/countries', '/cities', '/populations'];
 var responses = {};
-
-for (i = 0; i < 3; i++) {
+var i;
+for (i = 0; i < 3; i += 1) {
     var request = requests[i];
     var callback = function (error, result) {
+        'use strict';
         responses[request] = result;
-        var l = [];
-        for (K in responses)
-            l.push(K);
+        var l = [], K, c = [], cc = [], p = 0, i, j;
+        for (K in responses) {
+            if (responses.hasOwnProperty(K)) {
+                l.push(K);
+            }
+        }
 
-        if (l.length == 3) {
-            var c = [], cc = [], p = 0;
-            for (i = 0; i < responses['/countries'].length; i++) {
+        if (l.length === 3) {
+            
+            for (i = 0; i < responses['/countries'].length; i += 1) {
                 if (responses['/countries'][i].continent === 'Africa') {
                     c.push(responses['/countries'][i].name);
                 }
             }
 
-            for (i = 0; i < responses['/cities'].length; i++) {
-                for (j = 0; j < c.length; j++) {
+            for (i = 0; i < responses['/cities'].length; i += 1) {
+                for (j = 0; j < c.length; j += 1) {
                     if (responses['/cities'][i].country === c[j]) {
                         cc.push(responses['/cities'][i].name);
                     }
                 }
             }
 
-            for (i = 0; i < responses['/populations'].length; i++) {
-                for (j = 0; j < cc.length; j++) {
+            for (i = 0; i < responses['/populations'].length; i += 1) {
+                for (j = 0; j < cc.length; j += 1) {
                     if (responses['/populations'][i].name === cc[j]) {
                         p += responses['/populations'][i].count;
                     }
@@ -82,6 +90,6 @@ for (i = 0; i < 3; i++) {
             console.log('Total population in African cities: ' + p);
         }
     };
-
+    
     getData(request, callback);
 }
