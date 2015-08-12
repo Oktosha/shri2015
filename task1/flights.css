@@ -14,7 +14,7 @@ body {
   margin-right: auto; }
 
 header, footer {
-  background-color: #283E4B;
+  background-color: RGBA(40, 62, 75, 0.9);
   color: white; }
 
 footer {
@@ -27,14 +27,14 @@ main {
   background-color: white; }
 
 thead {
-  background-color: #283E4B;
+  background-color: RGBA(40, 62, 75, 0.9);
   color: white; }
 
 tbody tr:nth-child(2n+1) {
-  background-color: #D8D8D8; }
+  background-color: RGBA(216, 216, 216, 0.7); }
 
 tbody tr:nth-child(2n) {
-  background-color: #EDEDED; }
+  background-color: RGBA(237, 237, 237, 0.7); }
 
 input[id="departure"]:checked ~ .arrival {
   display: none; }
@@ -43,6 +43,42 @@ input[id="arrival"]:checked ~ .departure {
   display: none; }
 
 thead td {
-  padding: 10px; }
+  padding: 10px;
+  position: relative;
+  z-index: 3; }
+
+td {
+  position: relative;
+  border: solid 1px black; }
+
+td p {
+  position: relative;
+  z-index: 5; }
+
+table {
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  border-collapse: collapse; }
+
+tbody td:hover::after {
+  content: '';
+  height: 10000px;
+  left: 0;
+  position: absolute;
+  top: -5000px;
+  width: 100%;
+  background-color: RGBA(238, 218, 47, 0.7);
+  z-index: -1; }
+
+tbody td:hover::before {
+  content: '';
+  height: 100%;
+  top: 0;
+  position: absolute;
+  left: -5000px;
+  width: 10000px;
+  background-color: RGBA(238, 218, 47, 0.7);
+  z-index: -1; }
 
 /*# sourceMappingURL=flights.css.map */
