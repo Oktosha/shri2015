@@ -3,7 +3,8 @@ $main-background-color: white;
 $light-color: white;
 $footer-height: 80px;
 $content-width: 94%;
-
+$odd-rows-background-color: #D8D8D8;
+$even-rows-background-color: #EDEDED;
 html {
     position: relative;
     min-height: 100%;
@@ -38,4 +39,29 @@ footer {
 main {
     @extend .content;
     background-color: $main-background-color;
+}
+
+thead {
+    background-color: $accent-background-color;
+    color: $light-color;
+}
+
+tbody tr:nth-child(2n+1) {
+    background-color: $odd-rows-background-color;
+}
+
+tbody tr:nth-child(2n) {
+    background-color: $even-rows-background-color;
+}
+
+input[id="departure"]:checked ~ .arrival {
+    display: none;
+}
+
+input[id="arrival"]:checked ~ .departure {
+    display: none;
+}
+
+thead td {
+    padding: 10px;
 }

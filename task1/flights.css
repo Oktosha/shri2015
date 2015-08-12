@@ -26,4 +26,23 @@ footer {
 main {
   background-color: white; }
 
+thead {
+  background-color: #283E4B;
+  color: white; }
+
+tbody tr:nth-child(2n+1) {
+  background-color: #D8D8D8; }
+
+tbody tr:nth-child(2n) {
+  background-color: #EDEDED; }
+
+input[id="departure"]:checked ~ .arrival {
+  display: none; }
+
+input[id="arrival"]:checked ~ .departure {
+  display: none; }
+
+thead td {
+  padding: 10px; }
+
 /*# sourceMappingURL=flights.css.map */

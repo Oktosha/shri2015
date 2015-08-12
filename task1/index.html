@@ -9,19 +9,26 @@
         <header><h1>Международный аэропорт Тленово города Суть</h1></header>
         <main>
             <h1>Табло аэропорта</h1>
-            <form>
-                <fieldset>
-                    <legend>Показывать</legend>
-                    <label><input type="checkbox">Вылет</label>
-                    <label><input type="checkbox">Прилёт</label>
-                </fieldset>
-            </form>
+            <input 
+                   type="radio" 
+                   name="flight-type" 
+                   value="departure" 
+                   id="departure"
+                   checked>
+            <label for=departure>Вылет</label>
+            <input 
+                   type="radio"
+                   name="flight-type"
+                   value="arrival"
+                   id="arrival">
+            <label for="arrival">Прилёт</label>
             <p>Местное время 13:10. Все рейсы указаны по местному времени.</p>
             <table class="arrival">
                 <thead>
                     <tr>
                         <td>Тип рейса</td>
                         <td>Номер рейса</td>
+                        <td>Авиакомпания</td>
                         <td>Откуда</td>
                         <td>Прилёт</td>
                         <td>Самолёт</td>
@@ -33,7 +40,10 @@
                     <tr>
                         <td>Транзит</td>
                         <td>C7 189</td>
-                        <td>Иркутск</td>
+                        <td>S7 Airlines</td>
+                        <td>
+                            <p>Иркутск</p>
+                        </td>
                         <td>
                             <p>12:40</p>
                             <p>с опозданием</p>
@@ -48,7 +58,11 @@
                     <tr>
                         <td>Прилёт</td>
                         <td>СУ 173</td>
-                        <td>Новосибирск (Толмачёво)</td>
+                        <td>Аэрофлот</td>
+                        <td>
+                            <p>Новосибирск</p>
+                            <p>(Толмачёво)</p>
+                        </td>
                         <td>
                             <p>12:45</p>
                             <p>вовремя</p>
@@ -67,6 +81,7 @@
                     <tr>
                         <td>Тип рейса</td>
                         <td>Номер рейса</td>
+                        <td>Авиакомпания</td>
                         <td>Терминал</td>
                         <td>Самолёт</td>
                         <td>Регистрация</td>
@@ -79,6 +94,7 @@
                     <tr>
                         <td>Вылет</td>
                         <td>УН 154</td>
+                        <td>Трансаэро</td>
                         <td>A</td>
                         <td>Airbus A321-200</td>
                         <td>закончена</td>
@@ -87,11 +103,14 @@
                             <p>10:45</p>
                             <p>с опозданием</p>
                         </td>
-                        <td>Санкт-Петербург (Пулково)</td>
+                        <td><p>Санкт-Петербург</p>
+                            <p>(Пулково)</p>
+                        </td>
                     </tr>
                     <tr>
                         <td>Транзит</td>
                         <td>С7 189</td>
+                        <td>Аэрофлот</td>
                         <td>A</td>
                         <td>Airbus A330-300</td>
                         <td>
@@ -106,13 +125,16 @@
                             <p>14:15</p>
                             <p>по расписанию</p>
                         </td>
-                        <td>Москва (Домодедово)</td>
+                        <td>
+                            <p>Москва</p>
+                            <p>(Домодедово)</p>
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </main>
         <footer>
-            <p>Аэропорт Тленово, город Суть и все рейсы на этом табло вымышлены. Совпадения с реальными рейсами случайны. Источники картинок указаны в <a href="https://github.com/Oktosha/shri2015/blob/master/task1/README.md">README</a>.</p>
+            <p>Решение первого задания вступительной в ШРИ 2015 от Дарьи Колодзей. Аэропорт Тленово, город Суть и все рейсы на этом табло вымышлены. Совпадения с реальными рейсами случайны. Источники картинок указаны в <a href="https://github.com/Oktosha/shri2015/blob/master/task1/README.md">README</a>.</p>
         </footer>
     </body>
 </html>
