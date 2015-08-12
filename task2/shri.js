@@ -51,10 +51,10 @@ function getData(url, callback) {
 var requests = ['/countries', '/cities', '/populations'];
 var responses = {};
 var i;
-for (i = 0; i < 3; i += 1) {
-    var request = requests[i];
-    var callback = function (error, result) {
-        'use strict';
+
+function callbackFactory(request) {
+    'use strict';
+    return function (error, result) {
         responses[request] = result;
         var l = [], K, c = [], cc = [], p = 0, i, j;
         for (K in responses) {
@@ -90,6 +90,10 @@ for (i = 0; i < 3; i += 1) {
             console.log('Total population in African cities: ' + p);
         }
     };
-    
+}
+
+for (i = 0; i < 3; i += 1) {
+    var request = requests[i];
+    var callback = callbackFactory(request);
     getData(request, callback);
 }
