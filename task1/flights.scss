@@ -118,3 +118,72 @@ tbody td:hover::before {
     background-color: $light-accent-background-color;
     z-index: -1;
 }
+
+.frame {
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 5px;
+    height: 60px;
+    text-align: center;
+    padding: 10px;
+}
+
+.frame p {
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.s-seven /* Сибирь */ {
+    background-color: #B2DB1F;
+    background-image: url("airlines/s7.png");
+}
+
+.un /*Трансаэро*/ {
+    background-image: url("airlines/un.png");
+}
+
+.su /* Аэрофлот */ {
+    background-image: url(airlines/su.png);
+}
+
+.five-n /* Нордавиа */ {
+    background-image: url(airlines/5n.png);
+}
+
+.ah /* Эйр Алжир */ {
+    background-image: url(airlines/ah.png);
+}
+
+.ut /* Ютайр */ {
+    background-image: url(airlines/ut.png);
+}
+
+.nine-u /* Молдова */ {
+    background-image: url(airlines/9u.png);
+}
+
+.tp /* TAP Portugal */ {
+    background-image: url(airlines/tp.png);
+}
+
+.four-z /* Airlink */ {
+    background-image: url(airlines/4z.png);
+}
+
+@media screen and (max-width: 1150px) {
+    .airline-name {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .airplane {
+        display: none;
+    }
+}

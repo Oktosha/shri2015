@@ -90,4 +90,56 @@ tbody td:hover::before {
   background-color: RGBA(238, 218, 47, 0.7);
   z-index: -1; }
 
+.frame {
+  background-color: white;
+  border: solid 1px black;
+  border-radius: 5px;
+  height: 60px;
+  text-align: center;
+  padding: 10px; }
+
+.frame p {
+  margin: 0;
+  padding: 0; }
+
+.logo {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.s-seven {
+  background-color: #B2DB1F;
+  background-image: url("airlines/s7.png"); }
+
+.un {
+  background-image: url("airlines/un.png"); }
+
+.su {
+  background-image: url(airlines/su.png); }
+
+.five-n {
+  background-image: url(airlines/5n.png); }
+
+.ah {
+  background-image: url(airlines/ah.png); }
+
+.ut {
+  background-image: url(airlines/ut.png); }
+
+.nine-u {
+  background-image: url(airlines/9u.png); }
+
+.tp {
+  background-image: url(airlines/tp.png); }
+
+.four-z {
+  background-image: url(airlines/4z.png); }
+
+@media screen and (max-width: 1150px) {
+  .airline-name {
+    display: none; } }
+@media screen and (max-width: 1000px) {
+  .airplane {
+    display: none; } }
+
 /*# sourceMappingURL=flights.css.map */
