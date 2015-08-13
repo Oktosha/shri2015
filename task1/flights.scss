@@ -53,16 +53,29 @@ main {
     background-color: $main-background-color;
 }
 
-thead {
+.thead {
+    display: table-header-group;
     background-color: $accent-background-color;
     color: $light-color;
 }
 
-tbody tr:nth-child(2n+1) {
+.tbody {
+    display: table-row-group;
+}
+
+.tr {
+    display: table-row;
+    text-decoration: none;
+    color: black;
+    padding: 0;
+    margin: 0;
+}
+
+.tbody .tr:nth-child(2n+1) {
     background-color: $odd-rows-background-color;
 }
 
-tbody tr:nth-child(2n) {
+.tbody .tr:nth-child(2n) {
     background-color: $even-rows-background-color;
 }
 
@@ -74,22 +87,21 @@ input[id="arrival"]:checked ~ .departure {
     display: none;
 }
 
-thead td {
+.thead .td {
     position: relative;
 }
 
-td {
+.td {
+    display: table-cell;
     padding: 10px;
     position: relative;
     border: solid 1px black;
+    margin: 0;
+    vertical-align: center;
 }
 
-td p {
-    position: relative;
-    z-index: 5;
-}
-
-table {
+.table {
+    display: table;
     overflow: hidden;
     position: relative;
     z-index: 0;
@@ -97,7 +109,7 @@ table {
     border: 2px solid black;
 }
 
-tbody td:hover::after {
+.tbody .td:hover::after {
     content: '';
     height: 10000px;
     left: 0;
@@ -108,7 +120,7 @@ tbody td:hover::after {
     z-index: -1;
 }
 
-tbody td:hover::before {
+.tbody .td:hover::before {
     content: '';
     height: 100%;
     top: 0;
@@ -123,9 +135,9 @@ tbody td:hover::before {
     background-color: white;
     border: solid 1px black;
     border-radius: 5px;
-    height: 60px;
+    height: 70px;
     text-align: center;
-    padding: 10px;
+    padding: 5px;
 }
 
 .frame p {
@@ -137,6 +149,7 @@ tbody td:hover::before {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    color: transparent;
 }
 
 .s-seven /* Сибирь */ {
