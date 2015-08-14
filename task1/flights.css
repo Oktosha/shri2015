@@ -10,7 +10,8 @@ body {
   margin: 0 0 105px;
   background: url("sad-background.jpeg");
   background-size: cover;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  height: 100%; }
 
 .content, header, footer, main {
   width: 94%;
@@ -29,26 +30,29 @@ header {
 footer {
   position: absolute;
   bottom: 0;
+  padding-top: 5px;
   left: 3%;
   height: 80px; }
 
 main {
   background-color: white; }
 
-.thead {
+.thead, thead {
   display: table-header-group;
   background-color: RGBA(40, 62, 75, 0.9);
   color: white; }
 
-.tbody {
+.tbody, thead {
   display: table-row-group; }
 
-.tr {
+.tr, tr {
   display: table-row;
   text-decoration: none;
-  color: black;
   padding: 0;
   margin: 0; }
+
+.tbody .tr {
+  color: black; }
 
 .tbody .tr:nth-child(2n+1) {
   background-color: RGBA(180, 180, 180, 0.7); }
@@ -62,10 +66,10 @@ input[id="departure"]:checked ~ .arrival {
 input[id="arrival"]:checked ~ .departure {
   display: none; }
 
-.thead .td {
+.thead .td, thead td {
   position: relative; }
 
-.td {
+.td, td {
   display: table-cell;
   padding: 10px;
   position: relative;
@@ -73,13 +77,14 @@ input[id="arrival"]:checked ~ .departure {
   margin: 0;
   vertical-align: center; }
 
-.table {
+.table, table {
   display: table;
   overflow: hidden;
   position: relative;
   z-index: 0;
   border-collapse: collapse;
-  border: 2px solid black; }
+  border: 2px solid black;
+  width: 100%; }
 
 .tbody .td:hover::after {
   content: '';
@@ -153,5 +158,63 @@ input[id="arrival"]:checked ~ .departure {
 @media screen and (max-width: 1000px) {
   .airplane {
     display: none; } }
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 10; }
+
+.modal-dialog {
+  display: table-cell;
+  vertical-align: middle; }
+
+.modal-content {
+  margin: auto;
+  background-color: #f3f3f3;
+  position: relative;
+  padding: 0;
+  outline: 0;
+  border: 1px #777 solid;
+  text-align: justify;
+  width: 80%;
+  max-height: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 10px;
+  overflow: scroll; }
+
+.modal:target {
+  display: table;
+  position: fixed; }
+
+.modal-content h1 {
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center; }
+
+.status .frame {
+  height: 40px; }
+
+img {
+  width: 100%;
+  border: solid 1px black;
+  border-radius: 5px; }
+
+.close {
+  float: right;
+  color: RGBA(40, 62, 75, 0.9);
+  font-size: 60px;
+  text-decoration: none;
+  line-height: 30px;
+  margin-bottom: 10px; }
+
+.close:hover {
+  color: black; }
 
 /*# sourceMappingURL=flights.css.map */
