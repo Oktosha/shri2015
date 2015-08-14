@@ -37,10 +37,24 @@ footer {
   bottom: 0;
   left: 3%;
   height: 80px; }
+  footer p {
+    margin: 0;
+    padding: 0; }
 
-footer p {
-  margin: 0;
-  padding: 0; }
+/* Realization of table switch */
+input.switch-table {
+  display: none; }
+
+label.switch-table {
+  float: right;
+  margin: 10px;
+  padding: 5px; }
+
+input[id="departure"]:checked ~ .arrival {
+  display: none; }
+
+input[id="arrival"]:checked ~ .departure {
+  display: none; }
 
 input[id="departure"]:checked ~ label[for="departure"]::before,
 input[id="arrival"]:checked ~ label[for="arrival"]::before {
@@ -55,143 +69,78 @@ input[id="departure"]:checked ~ label[for="arrival"] {
   text-decoration: underline;
   color: RGBA(40, 62, 75, 0.9); }
 
-input {
-  display: none; }
+/* Table classes */
+.table {
+  display: table; }
 
-label {
-  float: right;
-  margin: 10px;
-  padding: 5px; }
+.thead {
+  display: table-header-group; }
 
+.tbody {
+  display: table-row-group; }
+
+.tr {
+  display: table-row; }
+
+.td {
+  display: table-cell; }
+
+/* Table styles */
 .thead,
 thead {
-  display: table-header-group;
   background-color: RGBA(40, 62, 75, 0.9);
   color: white; }
 
-.tbody,
-thead {
-  display: table-row-group; }
-
-.tr,
-tr {
-  display: table-row;
-  text-decoration: none;
-  padding: 0;
-  margin: 0; }
-
-.tbody .tr {
+.tbody .tr,
+tbody tr {
   color: black; }
 
-.tbody .tr:nth-child(2n+1) {
+.tbody .tr:nth-child(2n+1),
+tbody tr:nth-child(2n+1) {
   background-color: RGBA(180, 180, 180, 0.7); }
 
-.tbody .tr:nth-child(2n) {
+.tbody .tr:nth-child(2n),
+tbody tr:nth-child(2n) {
   background-color: RGBA(237, 237, 237, 0.7); }
-
-input[id="departure"]:checked ~ .arrival {
-  display: none; }
-
-input[id="arrival"]:checked ~ .departure {
-  display: none; }
-
-.thead .td,
-thead td {
-  position: relative; }
 
 .td,
 td {
-  display: table-cell;
   padding: 10px;
   position: relative;
   border: solid 1px black;
-  margin: 0;
-  vertical-align: center; }
+  vertical-align: middle; }
 
 .table,
 table {
-  display: table;
-  overflow: hidden;
-  position: relative;
-  z-index: 0;
   border-collapse: collapse;
   border: 2px solid black;
   width: 100%; }
 
-.tbody .td:hover::after {
-  content: '';
-  height: 10000px;
-  left: 0;
-  position: absolute;
-  top: -5000px;
-  width: 100%;
-  background-color: RGBA(238, 218, 47, 0.7);
-  z-index: -1; }
-
-.tbody .td:hover::before {
-  content: '';
-  height: 100%;
-  top: 0;
-  position: absolute;
-  left: -5000px;
-  width: 10000px;
-  background-color: RGBA(238, 218, 47, 0.7);
-  z-index: -1; }
-
-.frame {
-  background-color: white;
-  border: solid 1px black;
-  border-radius: 5px;
-  height: 70px;
-  text-align: center;
-  padding: 5px; }
-
-.frame p {
-  margin: 0;
-  padding: 0; }
-
-.logo {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: transparent; }
-
-.s-seven
- {
-  background-color: #B2DB1F;
-  background-image: url("airlines/s7.png"); }
-
-.un
- {
-  background-image: url("airlines/un.png"); }
-
-.su
- {
-  background-image: url(airlines/su.png); }
-
-.five-n
- {
-  background-image: url(airlines/5n.png); }
-
-.ah
- {
-  background-image: url(airlines/ah.png); }
-
-.ut
- {
-  background-image: url(airlines/ut.png); }
-
-.nine-u
- {
-  background-image: url(airlines/9u.png); }
-
-.tp
- {
-  background-image: url(airlines/tp.png); }
-
-.four-z
- {
-  background-image: url(airlines/4z.png); }
+.table.highlighted,
+table.hightlighted {
+  overflow: hidden;
+  position: relative;
+  z-index: 0; }
+  .table.highlighted .td:hover::after,
+  table.hightlighted .td:hover::after {
+    content: '';
+    height: 10000px;
+    left: 0;
+    position: absolute;
+    top: -5000px;
+    width: 100%;
+    background-color: RGBA(238, 218, 47, 0.7);
+    z-index: -1; }
+  .table.highlighted .tbody .td:hover::before,
+  table.hightlighted .tbody .td:hover::before {
+    content: '';
+    height: 100%;
+    top: 0;
+    position: absolute;
+    left: -5000px;
+    width: 10000px;
+    background-color: RGBA(238, 218, 47, 0.7);
+    z-index: -1; }
 
 @media screen and (max-width: 1150px) {
   .airline-name {
@@ -199,6 +148,80 @@ table {
 @media screen and (max-width: 1000px) {
   .airplane {
     display: none; } }
+a.tr {
+  text-decoration: none; }
+
+.bordered {
+  border: solid 1px black;
+  border-radius: 5px; }
+
+.text-rectangle {
+  background-color: white;
+  text-align: center;
+  padding: 5px; }
+  .text-rectangle p {
+    margin: 0;
+    padding: 0; }
+
+.arrival .bordered, .departure .bordered, .route .bordered {
+  height: 70px; }
+
+.status .bordered {
+  height: 35px; }
+
+/* Logos */
+.logo {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: transparent; }
+
+/* Сибирь */
+.airline-s7 {
+  background-color: #B2DB1F;
+  background-image: url("airlines/s7.png"); }
+
+/*Трансаэро*/
+.airline-un {
+  background-color: white;
+  background-image: url("airlines/un.png"); }
+
+/* Аэрофлот */
+.airline-su {
+  background-color: white;
+  background-image: url(airlines/su.png); }
+
+/* Нордавиа */
+.airline-5n {
+  background-color: white;
+  background-image: url(airlines/5n.png); }
+
+/* Эйр Алжир */
+.airline-ah {
+  background-color: white;
+  background-image: url(airlines/ah.png); }
+
+/* Ютайр */
+.airline-ut {
+  background-color: white;
+  background-image: url(airlines/ut.png); }
+
+/* Молдова */
+.airline-9u {
+  background-color: white;
+  background-image: url(airlines/9u.png); }
+
+/* TAP Portugal */
+.airline-tp {
+  background-color: white;
+  background-image: url(airlines/tp.png); }
+
+/* Airlink */
+.airline-4z {
+  background-color: darkblue;
+  background-image: url(airlines/4z.png); }
+
+/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -210,6 +233,10 @@ table {
   background-color: black;
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 10; }
+
+.modal:target {
+  display: table;
+  position: fixed; }
 
 .modal-dialog {
   display: table-cell;
@@ -228,33 +255,18 @@ table {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 10px;
   overflow: scroll; }
-
-.modal:target {
-  display: table;
-  position: fixed; }
-
-.modal-content h1 {
-  margin: 0 10px 10px;
-  padding: 0;
-  text-align: center; }
-
-.status .frame {
-  height: 40px; }
-
-img {
-  width: 100%;
-  border: solid 1px black;
-  border-radius: 5px; }
-
-.close {
-  float: right;
-  color: RGBA(40, 62, 75, 0.9);
-  font-size: 60px;
-  text-decoration: none;
-  line-height: 30px;
-  margin-bottom: 10px; }
-
-.close:hover {
-  color: black; }
+  .modal-content h1 {
+    margin: 0 10px 10px;
+    padding: 0;
+    text-align: center; }
+  .modal-content .close {
+    float: right;
+    color: RGBA(40, 62, 75, 0.9);
+    font-size: 60px;
+    text-decoration: none;
+    line-height: 30px;
+    margin-bottom: 10px; }
+  .modal-content .close:hover {
+    color: black; }
 
 /*# sourceMappingURL=flights.css.map */
