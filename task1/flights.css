@@ -41,6 +41,20 @@ footer {
     margin: 0;
     padding: 0; }
 
+span.cancel {
+  font-weight: 800;
+  color: crimson; }
+
+div.cancel {
+  background-color: red; }
+
+span.delay {
+  font-weight: 800;
+  color: darkorange; }
+
+div.delay {
+  background-color: yellow; }
+
 /* Realization of table switch */
 input.switch-table {
   display: none; }
@@ -142,11 +156,14 @@ table.hightlighted {
     background-color: RGBA(238, 218, 47, 0.7);
     z-index: -1; }
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1250px) {
   .airline-name {
     display: none; } }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
   .airplane {
+    display: none; } }
+@media screen and (max-width: 1050px) {
+  .note {
     display: none; } }
 a.tr {
   text-decoration: none; }
@@ -164,10 +181,13 @@ a.tr {
     padding: 0; }
 
 .arrival .bordered, .departure .bordered, .route .bordered {
-  height: 70px; }
+  height: 90px; }
 
 .status .bordered {
   height: 35px; }
+
+.city {
+  min-width: 170px; }
 
 /* Logos */
 .logo {
