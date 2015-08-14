@@ -1,24 +1,26 @@
+@charset "UTF-8";
 html {
+  /* for sticky footer */
   position: relative;
   min-height: 100%; }
 
-h1 {
-  margin: 0;
-  padding: 0; }
-
 body {
+  /* for sticky footer */
   margin: 0 0 105px;
+  height: 100%;
   background: url("sad-background.jpeg");
   background-size: cover;
-  background-repeat: no-repeat;
-  height: 100%; }
+  background-repeat: no-repeat; }
 
-.content, header, footer, main {
+header, main, footer {
   width: 94%;
   margin-left: auto;
   margin-right: auto;
   padding: 15px;
   box-sizing: border-box; }
+  header h1, header p, main h1, main p, footer h1, footer p {
+    margin: 0;
+    padding: 0; }
 
 header, footer {
   background-color: RGBA(40, 62, 75, 0.9);
@@ -27,25 +29,52 @@ header, footer {
 header {
   margin-bottom: 25px; }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  padding-top: 5px;
-  left: 3%;
-  height: 80px; }
-
 main {
   background-color: white; }
 
-.thead, thead {
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 3%;
+  height: 80px; }
+
+footer p {
+  margin: 0;
+  padding: 0; }
+
+input[id="departure"]:checked ~ label[for="departure"]::before,
+input[id="arrival"]:checked ~ label[for="arrival"]::before {
+  content: 'Сейчас показывается '; }
+
+label[for="departure"]::before,
+label[for="arrival"]::before {
+  content: 'Показать '; }
+
+input[id="arrival"]:checked ~ label[for="departure"],
+input[id="departure"]:checked ~ label[for="arrival"] {
+  text-decoration: underline;
+  color: RGBA(40, 62, 75, 0.9); }
+
+input {
+  display: none; }
+
+label {
+  float: right;
+  margin: 10px;
+  padding: 5px; }
+
+.thead,
+thead {
   display: table-header-group;
   background-color: RGBA(40, 62, 75, 0.9);
   color: white; }
 
-.tbody, thead {
+.tbody,
+thead {
   display: table-row-group; }
 
-.tr, tr {
+.tr,
+tr {
   display: table-row;
   text-decoration: none;
   padding: 0;
@@ -66,10 +95,12 @@ input[id="departure"]:checked ~ .arrival {
 input[id="arrival"]:checked ~ .departure {
   display: none; }
 
-.thead .td, thead td {
+.thead .td,
+thead td {
   position: relative; }
 
-.td, td {
+.td,
+td {
   display: table-cell;
   padding: 10px;
   position: relative;
@@ -77,7 +108,8 @@ input[id="arrival"]:checked ~ .departure {
   margin: 0;
   vertical-align: center; }
 
-.table, table {
+.table,
+table {
   display: table;
   overflow: hidden;
   position: relative;
@@ -124,32 +156,41 @@ input[id="arrival"]:checked ~ .departure {
   background-position: center;
   color: transparent; }
 
-.s-seven {
+.s-seven
+ {
   background-color: #B2DB1F;
   background-image: url("airlines/s7.png"); }
 
-.un {
+.un
+ {
   background-image: url("airlines/un.png"); }
 
-.su {
+.su
+ {
   background-image: url(airlines/su.png); }
 
-.five-n {
+.five-n
+ {
   background-image: url(airlines/5n.png); }
 
-.ah {
+.ah
+ {
   background-image: url(airlines/ah.png); }
 
-.ut {
+.ut
+ {
   background-image: url(airlines/ut.png); }
 
-.nine-u {
+.nine-u
+ {
   background-image: url(airlines/9u.png); }
 
-.tp {
+.tp
+ {
   background-image: url(airlines/tp.png); }
 
-.four-z {
+.four-z
+ {
   background-image: url(airlines/4z.png); }
 
 @media screen and (max-width: 1150px) {
@@ -178,12 +219,12 @@ input[id="arrival"]:checked ~ .departure {
   margin: auto;
   background-color: #f3f3f3;
   position: relative;
-  padding: 0;
+  padding: 5px;
   outline: 0;
   border: 1px #777 solid;
   text-align: justify;
   width: 80%;
-  max-height: 80%;
+  max-height: 85%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 10px;
   overflow: scroll; }
@@ -193,9 +234,8 @@ input[id="arrival"]:checked ~ .departure {
   position: fixed; }
 
 .modal-content h1 {
-  margin-bottom: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 0 10px 10px;
+  padding: 0;
   text-align: center; }
 
 .status .frame {
