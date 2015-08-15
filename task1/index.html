@@ -34,13 +34,13 @@
         <div class="tr">
           <div class="td">Тип рейса</div>
           <div class="td">Номер рейса</div>
-          <div class="td airline-name">Авиакомпания</div>
+          <div class="td col-airline-name">Авиакомпания</div>
           <div class="td">Логотип авиакомпании</div>
-          <div class="td airplane">Самолёт</div>
+          <div class="td col-airplane">Самолёт</div>
           <div class="td">Выдача багажа</div>
           <div class="td">Прилёт</div>
-          <div class="td city">Откуда</div>
-          <div class="td note">Примечания</div>
+          <div class="td col-city">Откуда</div>
+          <div class="td col-note">Примечания</div>
         </div>
       </div>
       
@@ -53,13 +53,13 @@
           <div class="td">
             <div class="bordered text-rectangle">C7 189</div>
           </div>
-          <div class="td airline-name">
+          <div class="td col-airline-name">
             <div class="bordered text-rectangle">S7 Airlines</div>
           </div>
           <div class="td">
             <div class="bordered logo airline-s7">лого S7 Airlines</div>
           </div>
-          <div class="td airplane">
+          <div class="td col-airplane">
             <div class="bordered text-rectangle">Airbus A330-300</div>
           </div>
           <div class="td">
@@ -77,7 +77,7 @@
           <div class="td">
             <div class="bordered text-rectangle">Иркутск</div>
           </div>
-          <div class="td note"></div>
+          <div class="td col-note"></div>
         </a>
         
         <a class="tr" href="#SU-173">
@@ -87,13 +87,13 @@
           <div class="td">
             <div class="bordered text-rectangle">СУ 173</div>
           </div>
-          <div class="td airline-name">
+          <div class="td col-airline-name">
             <div class="bordered text-rectangle">Аэрофлот</div>
           </div>
           <div class="td">
             <div class="bordered logo airline-su">лого Аэрофлота</div>
           </div>
-          <div class="td airplane">
+          <div class="td col-airplane">
             <div class="bordered text-rectangle">Airbus A330-300</div>
           </div>
           <div class="td">
@@ -111,64 +111,66 @@
           <div class="td">
             <div class="bordered text-rectangle">Новосибирск (Толмачёво)</div>
           </div>
-          <div class="td note"></div>
+          <div class="td col-note"></div>
         </a>
         
       </div>
     </div>
     
-    <div class="departure table highlighted">
-      
+    <div class="departure table">
       <div class="thead">
         <div class="tr">
-          <div class="td">Тип рейса</div>
-          <div class="td">Номер рейса</div>
-          <div class="td airline-name">Авиакомпания</div>
-          <div class="td">Логотип авиакомпании</div>
-          <div class="td airplane">Самолёт</div>
-          <div class="td">Регистрация</div>
-          <div class="td">Выход на посадку</div>
-          <div class="td">Вылет</div>
-          <div class="td city">Куда</div>
-          <div class="td note">Примечания</div>
+          <div class="td col-type">Тип рейса</div>
+          <div class="td col-number">Номер рейса</div>
+          <div class="td col-airline-name">Авиакомпания</div>
+          <div class="td col-logo">Логотип авиакомпании</div>
+          <div class="td col-airplane">Самолёт</div>
+          <div class="td col-check-in">Регистрация</div>
+          <div class="td col-boarding">Выход на посадку</div>
+          <div class="td col-departure">Вылет</div>
+          <div class="td col-city">Куда</div>
+          <div class="td col-note">Примечания</div>
         </div>
       </div>
+    </div>
+    
+    <div class="departure scroll">
+      <div class="departure table highlighted">
       
-      <div class="tbody">
-        
+      <div class="tbody">     
         <a class="tr" href="#5N-432">
-          <div class="td">
+          <div class="td col-type">
             <div class="bordered text-rectangle">Вылет</div>
           </div>
-          <div class="td">
+          <div class="td col-number">
             <div class="bordered text-rectangle">5H 432</div>
           </div>
-          <div class="td airline-name">
+          <div class="td col-airline-name">
             <div class="bordered text-rectangle">Нордавиа</div>
           </div>
-          <div class="td">
+          <div class="td col-logo">
             <div class="bordered logo airline-5n">лого Нордавиа</div>
           </div>
-          <div class="td airplane">
+          <div class="td col-airplane">
             <div class="bordered text-rectangle">Boeing 777-300ER</div>
           </div>
-          <div class="td">
+          <div class="td col-check-in">
             <div class="bordered text-rectangle">не начата</div>
           </div>
-          <div class="td">
+          <div class="td col-boarding">
             <div class="bordered text-rectangle">не начат</div>
           </div>
-          <div class="td">
+          <div class="td col-departure">
             <div class="bordered text-rectangle">
               <p><span class="cancel">Отменён</span></p>
               <p>план: 9:30</p>
             </div>
           </div>
-          <div class="td">
+          <div class="td col-city">
             <div class="bordered text-rectangle cancel"><p>Петропавловск-Камчатский (Елизово)</p>
             <p>проблема: вулканическое задымление</p></div>
           </div>
-          <div class="td note">
+          <div class="td col-note">
             <div class="bordered text-rectangle">Желающим предоставляются билеты на поезд</div>
           </div>
         </a>
@@ -180,13 +182,13 @@
           <div class="td">
             <div class="bordered text-rectangle">УН 154</div>
           </div>
-          <div class="td airline-name">
+          <div class="td col-airline-name">
             <div class="bordered text-rectangle">Трансаэро</div>
           </div>
           <div class="td">
             <div class="bordered logo airline-un">лого Трансаэро</div>
           </div>
-          <div class="td airplane">
+          <div class="td col-airplane">
             <div class="bordered text-rectangle">Airbus A321-200</div>
           </div>
           <div class="td">
@@ -204,7 +206,7 @@
           <div class="td">
             <div class="bordered text-rectangle">Санкт-Петербург (Пулково)</div>
           </div>
-          <div class="td note">
+          <div class="td col-note">
             <div class="bordered text-rectangle">Код-шеринг: СУ 563</div>
           </div>
         </a>
@@ -216,13 +218,13 @@
           <div class="td">
             <div class="bordered text-rectangle">СУ 563</div>
           </div>
-          <div class="td airline-name">
+          <div class="td col-airline-name">
             <div class="bordered text-rectangle">Аэрофлот</div>
           </div>
           <div class="td">
             <div class="bordered logo airline-su">лого Аэрофлота</div>
           </div>
-          <div class="td airplane">
+          <div class="td col-airplane">
             <div class="bordered text-rectangle">Airbus A321-200</div>
           </div>
           <div class="td">
@@ -240,7 +242,7 @@
           <div class="td">
             <div class="bordered text-rectangle">Санкт-Петербург (Пулково)</div>
           </div>
-          <div class="td note">
+          <div class="td col-note">
             <div class="bordered text-rectangle">Код-шеринг: УН 154</div>
           </div>
         </a>
@@ -252,13 +254,13 @@
           <div class="td">
             <div class="bordered text-rectangle">С7 189</div>
           </div>
-          <div class="td airline-name">
+          <div class="td col-airline-name">
             <div class="bordered text-rectangle">S7 Airlines</div>
           </div>
           <div class="td">
             <div class="bordered logo airline-s7">лого S7 Airlines</div>
           </div>
-          <div class="td airplane">
+          <div class="td col-airplane">
             <div class="bordered text-rectangle">Airbus A330-300</div>
           </div>
           <div class="td">
@@ -281,7 +283,7 @@
           <div class="td">
             <div class="bordered text-rectangle">Москва (Домодедово)</div>
           </div>
-          <div class="td note"></div>
+          <div class="td col-note"></div>
         </a>
         
                 <a class="tr" href="#SU-777">
@@ -291,13 +293,13 @@
           <div class="td">
             <div class="bordered text-rectangle">СУ 777</div>
           </div>
-          <div class="td airline-name">
+          <div class="td col-airline-name">
             <div class="bordered text-rectangle">Аэрофлот</div>
           </div>
           <div class="td">
             <div class="bordered logo airline-su">лого Аэрофлота</div>
           </div>
-          <div class="td airplane">
+          <div class="td col-airplane">
             <div class="bordered text-rectangle">Antonov AN-2</div>
           </div>
           <div class="td">
@@ -318,7 +320,7 @@
               <p>проблема: дожди</p>
             </div>
           </div>
-          <div class="td note"></div>
+          <div class="td col-note"></div>
         </a>
         
         <a class="tr" href="#AH-363">
@@ -328,13 +330,13 @@
           <div class="td">
             <div class="bordered text-rectangle">AH 363</div>
           </div>
-          <div class="td airline-name">
+          <div class="td col-airline-name">
             <div class="bordered text-rectangle">Эйр Алжир</div>
           </div>
           <div class="td">
             <div class="bordered logo airline-ah">лого Эйр Алжира</div>
           </div>
-          <div class="td airplane">
+          <div class="td col-airplane">
             <div class="bordered text-rectangle">Boeing 777-300ER</div>
           </div>
           <div class="td">
@@ -354,10 +356,11 @@
               <p>Йоханнесбург (О. Р. Тамбо)</p>
             </div>
           </div>
-          <div class="td note"></div>
+          <div class="td col-note"></div>
         </a>
         
       </div>
+    </div>
     </div>
   </main>
   
@@ -463,6 +466,96 @@
           </tbody>
         </table>
         
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal" id="5N-432">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <a class="close" href="#close">×</a>
+        <h1>Это всплывающее окно с подробной информацией про рейс 5Н 432.</h1>
+        <p>Упс, Вы не угадали, для какого рейса всплывающее окно свёрстано полностью :)</p>
+        <p> Ищите дальше!
+        </p>
+        <p>
+          Или кликайте <a href="#S7-189">сюда</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal" id="SU-563">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <a class="close" href="#close">×</a>
+        <h1>Это всплывающее окно с подробной информацией про рейс СУ 563.</h1>
+        <p>Упс, Вы не угадали, для какого рейса всплывающее окно свёрстано полностью :)</p>
+        <p> Ищите дальше!
+        </p>
+        <p>
+          Или кликайте <a href="#S7-189">сюда</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal" id="SU-777">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <a class="close" href="#close">×</a>
+        <h1>Это всплывающее окно с подробной информацией про рейс СУ 777.</h1>
+        <p>Упс, Вы не угадали, для какого рейса всплывающее окно свёрстано полностью :)</p>
+        <p> Ищите дальше!
+        </p>
+        <p>
+          Или кликайте <a href="#S7-189">сюда</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal" id="AH-363">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <a class="close" href="#close">×</a>
+        <h1>Это всплывающее окно с подробной информацией про рейс AH 363.</h1>
+        <p>Упс, Вы не угадали, для какого рейса всплывающее окно свёрстано полностью :)</p>
+        <p> Ищите дальше!
+        </p>
+        <p>
+          Или кликайте <a href="#S7-189">сюда</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal" id="SU-173">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <a class="close" href="#close">×</a>
+        <h1>Это всплывающее окно с подробной информацией про рейс СУ 173.</h1>
+        <p>Упс, Вы не угадали, для какого рейса всплывающее окно свёрстано полностью :)</p>
+        <p> Ищите дальше!
+        </p>
+        <p>
+          Или кликайте <a href="#S7-189">сюда</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal" id="UN-154">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <a class="close" href="#close">×</a>
+        <h1>Это всплывающее окно с подробной информацией про рейс УН 154.</h1>
+        <p>Упс, Вы не угадали, для какого рейса всплывающее окно свёрстано полностью :)</p>
+        <p> Ищите дальше!
+        </p>
+        <p>
+          Или кликайте <a href="#S7-189">сюда</a>.
+        </p>
       </div>
     </div>
   </div>

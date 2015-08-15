@@ -204,24 +204,6 @@ table.hightlighted {
   }
 }
 
-@media screen and (max-width: 1250px) {
-  .airline-name {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 1100px) {
-  .airplane {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 1050px) {
-  .note {
-    display: none;
-  }
-}
-
 a.tr {
   text-decoration: none;
 }
@@ -252,8 +234,95 @@ a.tr {
   height: 35px;
 }
 
-.city {
-  min-width: 170px;
+/*Table widths and their display*/
+
+.col-type {
+  width: 70px;
+  min-width: 70px;
+}
+
+.col-number {
+  width: 45px;
+}
+
+.col-airline-name {
+  width: 100px;
+}
+
+.col-logo {
+  width: 95px;
+}
+
+.col-airplane {
+  width: 80px;
+}
+
+.col-check-in {
+  width: 85px;
+}
+
+.col-boarding {
+  width: 85px;
+}
+
+.col-departure {
+  width: 110px;
+}
+
+.col-city {
+  width: 170px;
+}
+
+
+@media screen and (max-width: 1290px) {
+  .col-airline-name {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1160px) {
+  .col-airplane {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .col-note {
+    display: none;
+  } 
+}
+
+/* Adaptive scrolling area */
+
+.scroll {
+  display: block;
+  height: 600px;
+  overflow-y: auto;
+}
+
+
+@media screen and (max-height: 850px) {
+  .scroll {
+    height: 500px;
+  }
+}
+
+@media screen and (max-height: 750px) {
+  .scroll {
+    height: 400px;
+  }
+}
+
+@media screen and (max-height: 650px) {
+  .scroll {
+    height: 300px;
+  }
+}
+
+@media screen and (max-height: 550px) {
+  .scroll {
+    height: 200px;
+  }
 }
 
 /* Logos */
@@ -353,7 +422,7 @@ a.tr {
   border: 1px #777 solid;
   text-align: justify;
   width: 80%;
-  max-height: 85%;
+  max-height: 95%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
               0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 10px;
