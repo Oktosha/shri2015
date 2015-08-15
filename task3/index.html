@@ -9,7 +9,8 @@
   
   <div id="load" class="bordered">
     <div id="drop-zone" class="bordered">Перетащите сюда то, что Вы и Ваш браузер считаете музыкой. Или воспользуйтесь кнопкой выбора файла ниже.</div>
-    <input id="file" type="file" accept="audio/*" onchange="loadFile(this.files[0])"/>
+    <input id="file" type="file" accept="audio/*" onchange="loadFile(this.files[0], 'load-title', 'load-artist',
+                 'load-album', 'load-cover')"/>
     <div class="meta bordered">
       <img id="load-cover" class="cover"/>
       <div id="load-title" class="title"></div>
@@ -22,7 +23,13 @@
   <h1>Плеер, йоу!</h1>
   
   <div id="play" class="bordered">
-    <div class="meta bordered">Тут будут данные проигрываемого файла</div>
+    <div class="meta bordered">
+      <img id="play-cover" class="cover"/>
+      <div id="play-file"></div>
+      <div id="play-title" class="title"></div>
+      <div id="play-artist" class="artist"></div>
+      <div id="play-album" class="album"></div>
+    </div>
     <audio id="audio" controls>
       Если вы это видите, то Ваш браузер не умеет в тег audio. Или, возможно, Вы читаете исходный код, тогда продолжайте. 
     </audio>

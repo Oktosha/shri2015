@@ -79,3 +79,8 @@ h1 {
 input[type="file"] {
   width: 100%;
 }
+
+#play-file::before {
+  content: 'Файл: ';
+  font-weight: 800;
+}

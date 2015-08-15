@@ -1,4 +1,4 @@
-/*global ID3, FileAPIReader */
+/*global ID3, FileAPIReader, URL */
 
 /**
  * Loading the tags using
@@ -8,33 +8,36 @@
 
 var FILE;
 
-function showTags(url) {
+function showTags(url, titleElementId,
+                   artistElementId, albumElementId, coverElementId) {
     'use strict';
     var tags = ID3.getAllTags(url),
         image = tags.picture,
         base64String = "",
         i,
         base64;
-    document.getElementById('load-title').textContent = tags.title || "";
-    document.getElementById('load-artist').textContent = tags.artist || "";
-    document.getElementById('load-album').textContent = tags.album || "";
+    document.getElementById(titleElementId).textContent = tags.title || "";
+    document.getElementById(artistElementId).textContent = tags.artist || "";
+    document.getElementById(albumElementId).textContent = tags.album || "";
     if (image) {
         for (i = 0; i < image.data.length; i += 1) {
             base64String += String.fromCharCode(image.data[i]);
         }
         base64 = "data:" + image.format + ";base64," + window.btoa(base64String);
-        document.getElementById('load-cover').setAttribute('src', base64);
+        document.getElementById(coverElementId).setAttribute('src', base64);
     } else {
-        document.getElementById('load-cover').style.display = "none";
+        document.getElementById(coverElementId).style.display = "none";
     }
 }
 
-function loadFile(file) {
+function loadFile(file, titleElementId,
+                   artistElementId, albumElementId, coverElementId) {
     'use strict';
     var url = file.urn || file.name;
     FILE = file;
     ID3.loadTags(url, function () {
-        showTags(url);
+        showTags(url, titleElementId,
+                   artistElementId, albumElementId, coverElementId);
     }, {
         tags: ["title", "artist", "album", "picture"],
         dataReader: new FileAPIReader(file)
@@ -50,7 +53,8 @@ function handleFileSelect(evt) {
     'use strict';
     evt.stopPropagation();
     evt.preventDefault();
-    loadFile(evt.dataTransfer.files[0]);
+    loadFile(evt.dataTransfer.files[0], 'load-title', 'load-artist',
+            'load-album', 'load-cover');
 }
 
 function handleDragOver(evt) {
@@ -74,5 +78,8 @@ dropZone.addEventListener('drop', handleFileSelect, false);
 function loadToAudio() {
     'use strict';
     var audio = document.getElementById("audio");
+    loadFile(FILE, 'play-title', 'play-artist', 'play-album', 'play-cover');
     audio.src = URL.createObjectURL(FILE);
+    audio.play();
+    document.getElementById('play-file').textContent = FILE.name;
 }
