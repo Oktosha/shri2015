@@ -16,3 +16,24 @@
 + вывод названия песни и исполнителя из метаданных аудиофайла.
 
 Результат пришлите в виде двух ссылок: на работающий пример и на исходный код на GitHub.
+
+Решение
+=======
+
+Шаг 1. Немого теории
+--------------------
+
+###Webaudio API
+
+Читаю [статью](http://www.html5rocks.com/en/tutorials/webaudio/intro/) c html5rocks. 
+Потом [это](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) с MDN.
+
+###Эквалайзер
+
+Почитала википедию и посмотрела, как он сделан в iTunes. Ещё [статья](http://habrahabr.ru/post/240819/) на хабре.
+Вот ещё [теория](http://clippu.net/threads/nastrojka-ehkvalajzera-osnovy-tembrovoj-korrekcii.571/) для продвинутых.
+
+###File API
+
+Читаю [статью](http://www.html5rocks.com/ru/tutorials/file/dndfiles/) c html5rocks 
+и соответствующий вопрос на stack-overflow.
