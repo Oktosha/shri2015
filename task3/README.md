@@ -44,3 +44,5 @@
 Сделала скучную вёрстку.
 
 Добавила чтение данных файла с помощью библиотеки [JavaScript-ID3-Reader](https://github.com/aadsm/JavaScript-ID3-Reader).
+
+Добавила drag-n-drop, см. [туториал](http://www.html5rocks.com/en/tutorials/file/dndfiles) с html5rocks.

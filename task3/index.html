@@ -8,18 +8,18 @@
 <body>
   
   <div id="load" class="bordered">
-    <div id="drag-area" class="bordered">Сюда можно будет перетащить то, что Вы и Ваш браузер считаете музыкой.</div>
-    <input id="file" type="file" accept="audio/*" onchange="loadFile(this)"/>
+    <div id="drop-zone" class="bordered">Перетащите сюда то, что Вы и Ваш браузер считаете музыкой. Или воспользуйтесь кнопкой выбора файла ниже.</div>
+    <input id="file" type="file" accept="audio/*" onchange="loadFile(this.files[0])"/>
     <div class="meta bordered">
       <img id="load-cover" class="cover"/>
       <div id="load-title" class="title"></div>
       <div id="load-artist" class="artist"></div>
       <div id="load-album" class="album"></div>
     </div>
-    <button>Играть</button>
+    <button>Загрузить файл в плеер!</button>
   </div>
   
-  <h1>Аудио-плеер</h1>
+  <h1>Плеер, йоу!</h1>
   
   <div id="play" class="bordered">
     <div class="meta bordered">Тут будут данные проигрываемого файла</div>

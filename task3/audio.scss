@@ -24,7 +24,7 @@ h1 {
   float: right;
 }
 
-#drag-area {
+#drop-zone {
   height: 100px;
   width: 350px;
 }
@@ -74,4 +74,8 @@ h1 {
   top: 5px;
   right: 5px;
   height: 100%;
+}
+
+input[type="file"] {
+  width: 100%;
 }

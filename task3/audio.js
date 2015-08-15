@@ -27,10 +27,9 @@ function showTags(url) {
     }
 }
 
-function loadFile(input) {
+function loadFile(file) {
     'use strict';
-    var file = input.files[0],
-        url = file.urn || file.name;
+    var url = file.urn || file.name;
 
     ID3.loadTags(url, function () {
         showTags(url);
@@ -39,3 +38,29 @@ function loadFile(input) {
         dataReader: new FileAPIReader(file)
     });
 }
+
+/**
+ * Support of dran-n-drop.
+ * From http://www.html5rocks.com/en/tutorials/file/dndfiles
+ */
+
+function handleFileSelect(evt) {
+    'use strict';
+    evt.stopPropagation();
+    evt.preventDefault();
+    loadFile(evt.dataTransfer.files[0]);
+}
+
+function handleDragOver(evt) {
+    'use strict';
+    evt.stopPropagation();
+    evt.preventDefault();
+    evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
+}
+
+// Setup the dnd listeners.
+var dropZone = document.getElementById('drop-zone');
+dropZone.addEventListener('dragover', handleDragOver, false);
+dropZone.addEventListener('drop', handleFileSelect, false);
+  
+  
