@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .bordered {
   border: solid 1px black;
   border-radius: 5px;
@@ -44,5 +45,23 @@ h1 {
 
 #load .meta {
   height: 100px; }
+
+.title::before {
+  content: 'Название: ';
+  font-weight: 800; }
+
+.artist::before {
+  content: 'Исполнитель: ';
+  font-weight: 800; }
+
+.album::before {
+  content: 'Альбом: ';
+  font-weight: 800; }
+
+.cover {
+  float: right;
+  top: 5px;
+  right: 5px;
+  height: 100%; }
 
 /*# sourceMappingURL=audio.css.map */

@@ -36,4 +36,11 @@
 ###File API
 
 Читаю [статью](http://www.html5rocks.com/ru/tutorials/file/dndfiles/) c html5rocks 
-и соответствующий вопрос на stack-overflow.
+и соответствующий [вопрос](http://stackoverflow.com/questions/14074833/using-local-file-for-web-audio-api-in-javascript) на stack-overflow.
+
+Шаг 2. Практика
+---------------
+
+Сделала скучную вёрстку.
+
+Добавила чтение данных файла с помощью библиотеки [JavaScript-ID3-Reader](https://github.com/aadsm/JavaScript-ID3-Reader).
