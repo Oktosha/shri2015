@@ -16,14 +16,14 @@
       <div id="load-artist" class="artist"></div>
       <div id="load-album" class="album"></div>
     </div>
-    <button>Загрузить файл в плеер!</button>
+    <button onclick="loadToAudio()">Загрузить файл в плеер!</button>
   </div>
   
   <h1>Плеер, йоу!</h1>
   
   <div id="play" class="bordered">
     <div class="meta bordered">Тут будут данные проигрываемого файла</div>
-    <audio controls>
+    <audio id="audio" controls>
       Если вы это видите, то Ваш браузер не умеет в тег audio. Или, возможно, Вы читаете исходный код, тогда продолжайте. 
     </audio>
   </div>

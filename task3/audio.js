@@ -6,6 +6,8 @@
  * Next 2 functions are practically completely copypasted from the sample.
  */
 
+var FILE;
+
 function showTags(url) {
     'use strict';
     var tags = ID3.getAllTags(url),
@@ -30,7 +32,7 @@ function showTags(url) {
 function loadFile(file) {
     'use strict';
     var url = file.urn || file.name;
-
+    FILE = file;
     ID3.loadTags(url, function () {
         showTags(url);
     }, {
@@ -64,3 +66,13 @@ dropZone.addEventListener('dragover', handleDragOver, false);
 dropZone.addEventListener('drop', handleFileSelect, false);
   
   
+/**
+* Loading file to audio tag.
+* Looked at http://jsfiddle.net/Tv8Cm/
+*/
+
+function loadToAudio() {
+    'use strict';
+    var audio = document.getElementById("audio");
+    audio.src = URL.createObjectURL(FILE);
+}
