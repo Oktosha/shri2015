@@ -81,21 +81,25 @@
 Аэропорты    | 20
 Города       | 15
 
+На самом деле такое большое количество рейсов придумывать не пришлось. В моей вёрстке строки о-о-очень высокие :)
+
 Культурно будет указать источники картинок.
 
 Картинка              | Откуда
 ----------------------|----------
-логотипы авиакомпаний | ru.wikipedia.org
-B738                  | dron-nsk.livejournal.com/45903.html
-B77W-inside           | samolets.com/sxema-salona-boeing-777-300er-aeroflot/
-B77W-outside          | leh-a.livejournal.com/73661.html
-AN2                   | avia.pro/blog/antonov-2-foto-video-shema-salona-harakteristiki-otzyvy
-A333                  | aviado.ru/airlines/jets/airbus-a330-300/
-A321                  | aviado.ru/airlines/jets/airbus-a321/
-флаги стран           | ru.wikipedia.org
-иконки погоды         | simekonelove.deviantart.com/art/Vector-Stylish-Weather-Icons-258808359
-иконки статуса        | visuallyinteresting.co.uk/2011/10/24/airport-wayfinding-icons-updated-explained/
-фон                   | unsplash.com
+логотипы авиакомпаний | http://ru.wikipedia.org
+B738                  | http://dron-nsk.livejournal.com/45903.html
+B77W-inside           | http://samolets.com/sxema-salona-boeing-777-300er-aeroflot/
+B77W-outside          | http://leh-a.livejournal.com/73661.html
+AN2                   | http://avia.pro/blog/antonov-2-foto-video-shema-salona-harakteristiki-otzyvy
+A333                  | http://aviado.ru/airlines/jets/airbus-a330-300/
+A321                  | http://aviado.ru/airlines/jets/airbus-a321/
+флаги стран           | http://ru.wikipedia.org
+иконки погоды         | http://simekonelove.deviantart.com/art/Vector-Stylish-Weather-Icons-258808359
+иконки статуса        | http://visuallyinteresting.co.uk/2011/10/24/airport-wayfinding-icons-updated-explained/
+фон                   | http://unsplash.com
+
+На самом деле, многие картинки не понадобились, так себе и пылятся в репозитории.
 
 Будем считать, что в городе Суть местное время 13:10.
 
@@ -119,3 +123,12 @@ input[id="arrival"]:checked ~ .departure {
     display: none;
 }
 ```
+
+Ответ
+=====
+
+[работающий пример](http://oktosha.github.io/shri2015/task1/)
+
+[исходный код](https://github.com/Oktosha/shri2015/tree/master/task1)
+
+Заметим, что из исходного кода интересны только [index.html](https://github.com/Oktosha/shri2015/blob/master/task1/index.html) и [flights.scss](https://github.com/Oktosha/shri2015/blob/master/task1/flights.scss).
