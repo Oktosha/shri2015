@@ -71,15 +71,20 @@ dropZone.addEventListener('drop', handleFileSelect, false);
   
   
 /**
-* Loading file to audio tag.
-* Looked at http://jsfiddle.net/Tv8Cm/
+* web audio API starts here
 */
+
+var AudioContexConstructor = window.AudioContext || window.webkitAudioContext;
+var audioCtx = new AudioContexConstructor();
 
 function loadToAudio() {
     'use strict';
-    var audio = document.getElementById("audio");
+    var audio = document.getElementById("audio"),
+        source;
     loadFile(FILE, 'play-title', 'play-artist', 'play-album', 'play-cover');
     audio.src = URL.createObjectURL(FILE);
+    source = audioCtx.createMediaElementSource(audio);
+    source.connect(audioCtx.destination);
     audio.play();
     document.getElementById('play-file').textContent = FILE.name;
 }
