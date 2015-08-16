@@ -88,17 +88,14 @@ var source = audioCtx.createMediaElementSource(document.getElementById("audio"))
 
 function draw() {
     'use strict';
-    window.drawVisual = window.requestAnimationFrame(draw);
-
-    analyser.getByteFrequencyData(dataArray);
-
-    canvasCtx.fillStyle = 'rgb(0, 0, 0)';
-    canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
-
     var barWidth = (WIDTH / bufferLength) * 2.5,
         barHeight,
         x = 0,
         i;
+    window.requestAnimationFrame(draw);
+    analyser.getByteFrequencyData(dataArray);
+    canvasCtx.fillStyle = 'rgb(0, 0, 0)';
+    canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
 
     for (i = 0; i < bufferLength; i += 1) {
         barHeight = dataArray[i];
@@ -115,10 +112,6 @@ function loadToAudio() {
     var audio = document.getElementById("audio");
     loadFile(FILE, 'play-title', 'play-artist', 'play-album', 'play-cover');
     document.getElementById('play-file').textContent = FILE.name;
-    
-    analyser.disconnect();
-    source.disconnect();
-    audioCtx.destination.disconnect();
     
     audio.src = URL.createObjectURL(FILE);
     source.connect(analyser);

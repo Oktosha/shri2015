@@ -32,7 +32,8 @@ h1 {
 #equalizer {
   clear: both;
   height: 200px;
-  width: 778px; }
+  width: 778px;
+  display: none; }
 
 #play .meta {
   height: 210px;

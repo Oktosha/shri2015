@@ -46,3 +46,16 @@
 Добавила чтение данных файла с помощью библиотеки [JavaScript-ID3-Reader](https://github.com/aadsm/JavaScript-ID3-Reader).
 
 Добавила drag-n-drop, см. [туториал](http://www.html5rocks.com/en/tutorials/file/dndfiles) с html5rocks.
+
+Добавила воспроизведение файла.
+
+Добавляю визуализатор, но есть проблема с Safari. Моя проблема в том, что данные про частоты просто не обновляются. Эта проблема не только не у меня, та же проблема и у [людей с более прямыми руками](https://github.com/jsantell/web-audio-api-bugs/tree/gh-pages/MediaElement-to-AnalyserNode), причём давно.
+
+Эквалайзер пока не реализован.
+
+Ответ
+=====
+
+[Пример](http://oktosha.github.io/shri2015/task3/)
+
+[Код](https://github.com/Oktosha/shri2015/tree/master/task3)
