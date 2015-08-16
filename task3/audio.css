@@ -29,11 +29,6 @@ h1 {
   width: 370px;
   float: left; }
 
-#visual {
-  clear: both;
-  width: 778px;
-  height: 100px; }
-
 #equalizer {
   clear: both;
   height: 200px;
@@ -70,5 +65,12 @@ input[type="file"] {
 #play-file::before {
   content: 'Файл: ';
   font-weight: 800; }
+
+.visual {
+  clear: both; }
+
+#visual {
+  width: 778px;
+  height: 150px; }
 
 /*# sourceMappingURL=audio.css.map */

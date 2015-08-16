@@ -1,4 +1,4 @@
-/*global ID3, FileAPIReader, URL */
+/*global ID3, FileAPIReader, URL, Uint8Array */
 
 /**
  * Loading the tags using
@@ -7,6 +7,8 @@
  */
 
 var FILE;
+var WIDTH = 778;
+var HEIGHT = 150;
 
 function showTags(url, titleElementId,
                    artistElementId, albumElementId, coverElementId) {
@@ -71,20 +73,56 @@ dropZone.addEventListener('drop', handleFileSelect, false);
   
   
 /**
-* web audio API starts here
+* web audio API starts here.
+* drawing: https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/getByteFrequencyData
 */
 
 var AudioContexConstructor = window.AudioContext || window.webkitAudioContext;
 var audioCtx = new AudioContexConstructor();
+var canvas = document.getElementById("visual");
+var canvasCtx = canvas.getContext("2d");
+var analyser = audioCtx.createAnalyser();
+var bufferLength = analyser.frequencyBinCount;
+var dataArray = new Uint8Array(bufferLength);
+var source = audioCtx.createMediaElementSource(document.getElementById("audio"));
+
+function draw() {
+    'use strict';
+    window.drawVisual = window.requestAnimationFrame(draw);
+
+    analyser.getByteFrequencyData(dataArray);
+
+    canvasCtx.fillStyle = 'rgb(0, 0, 0)';
+    canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
+
+    var barWidth = (WIDTH / bufferLength) * 2.5,
+        barHeight,
+        x = 0,
+        i;
+
+    for (i = 0; i < bufferLength; i += 1) {
+        barHeight = dataArray[i];
+
+        canvasCtx.fillStyle = 'rgb(' + (barHeight + 100) + ',50,50)';
+        canvasCtx.fillRect(x, HEIGHT - barHeight / 2, barWidth, barHeight / 2);
+
+        x += barWidth + 1;
+    }
+}
 
 function loadToAudio() {
     'use strict';
-    var audio = document.getElementById("audio"),
-        source;
+    var audio = document.getElementById("audio");
     loadFile(FILE, 'play-title', 'play-artist', 'play-album', 'play-cover');
-    audio.src = URL.createObjectURL(FILE);
-    source = audioCtx.createMediaElementSource(audio);
-    source.connect(audioCtx.destination);
-    audio.play();
     document.getElementById('play-file').textContent = FILE.name;
+    
+    analyser.disconnect();
+    source.disconnect();
+    audioCtx.destination.disconnect();
+    
+    audio.src = URL.createObjectURL(FILE);
+    source.connect(analyser);
+    analyser.connect(audioCtx.destination);
+    audio.play();
+    draw();
 }
